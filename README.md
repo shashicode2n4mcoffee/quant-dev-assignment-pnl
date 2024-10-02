@@ -1,18 +1,35 @@
-# quant-dev-assignment-pnl
+# Quant Trading and Pricing Calculator
 
-Quant Trading and Pricing Calculator
+This project provides two main features:
+1. **Calculation of Realized and Unrealized Profit & Loss (P&L)** based on trade data from a CSV file.
+2. **Calculation of Best Aggregated Prices** for target tiers by combining prices from different banks to achieve the lowest possible price.
 
-Clone the Repository
+---
+
+## Getting Started
+
+### Clone the Repository
+
+----
 git clone https://github.com/shashicode2n4mcoffee/quant-dev-assignment-pnl.git
 cd quant-dev-assignment-pnl
 
-API Endpoints 
-Profit & Loss Calculation (CSV-based)
-Endpoint: /api/trades/upload
-Method: POST
-Input : CSV file with data like 
-![image](https://github.com/user-attachments/assets/a7d2d5f5-deee-47e6-962c-2cb899356cf7)
-Response : 
+----
+
+## API Endpoints
+
+### 1. Profit & Loss Calculation (CSV-based)
+
+**Endpoint**: `/api/trades/upload`  
+**Method**: `POST`
+
+**Input**: Upload a CSV file containing trade data with the following structure:
+
+![image](https://github.com/user-attachments/assets/d9f6361c-cbd8-4311-ad34-57ec088ef692)
+
+**Response Example**:
+
+```json
 [
     {
         "quantity": 13,
@@ -33,11 +50,15 @@ Response :
         "unrealizedPnL": 0.05750000000004718
     }
 ]
+```
+### 2. Best Aggregated Prices Calculation
 
-Best Aggregated Prices Calculation
-Endpoint: /api/pricing/best-prices
-Method: GET
-Response : 
+**Endpoint**: `/api/pricing/best-prices`  
+**Method**: `GET`
+
+**Response Example**:
+
+```json
 {
   "3": {
     "targetTier": 3,
@@ -77,5 +98,4 @@ Response :
     "totalPrice": 180.0
   }
 }
-
-
+```
